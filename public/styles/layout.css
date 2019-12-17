@@ -35,10 +35,41 @@ main {
 }
 
 .tweet-container {
+  text-align: left;
   width: 100%;
-  border: darkslategray solid 2px;
-  padding: 2em;
+  border: darkslategray solid 3px;
+  padding: 0.5em;
   margin-top: 100px;
   margin-bottom: 2em;
 }
 
+.tweet-container header {
+
+}
+
+.tweet-container footer {
+  width: 100%;
+  border-top:  darkslategray solid 3px;
+}
+
+.tweet-text {
+
+}
+
+#tweet-age {
+  font-size: medium;
+}
+
+article:hover #userhandle {
+  
+  display: block;
+}
+
+article:hover {
+  box-shadow: 10px 10px 5px grey;
+}
+
+#userhandle {
+  float: right;
+  display: none;
+}
