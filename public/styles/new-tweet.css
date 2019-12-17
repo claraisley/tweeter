@@ -1,0 +1,32 @@
+
+.form-inline {
+  left: 5%;
+  right: 5%;
+}
+
+.form-inline textarea {
+  background-color: #f4f1ec;
+  border: none;
+  display: block;
+  border-bottom: 5px solid gray;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.submit-tweet {
+  float: left;
+  font-family: 'Bungee', cursive;
+  font-weight: 400;
+  padding:10px; 
+  background: darkslateblue; 
+  color: #f4f1ec;
+  border:0 none;
+  cursor:pointer;
+
+}
+
+.counter {
+  float: right;
+  font-family: 'Bungee', cursive;
+  font-weight: 400;
+}
