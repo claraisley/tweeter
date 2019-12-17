@@ -6,6 +6,7 @@
 
 .form-inline textarea {
   background-color: #f4f1ec;
+  font-weight: bold;
   border: none;
   display: block;
   border-bottom: 5px solid gray;
