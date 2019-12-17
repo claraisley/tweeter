@@ -1,0 +1,11 @@
+
+header {
+  height: 400px;
+  top: 120px;
+  position: absolute;
+  width: 100%;
+
+  background-color: coral;
+  text-align: center;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
