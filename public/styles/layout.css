@@ -34,7 +34,7 @@ main {
   top: 62%;
 }
 
-.tweet-container {
+.tweets {
   text-align: left;
   width: 100%;
   border: darkslategray solid 3px;
@@ -43,17 +43,21 @@ main {
   margin-bottom: 2em;
 }
 
-.tweet-container header {
+.tweets header {
   width: 100%;
 }
 
-.tweet-container footer {
+.tweets footer {
   width: 100%;
   border-top:  darkslategray solid 3px;
 }
 
 .tweet-text {
   font-size: larger;
+}
+
+#name {
+  font-size: large;
 }
 
 #tweet-age {

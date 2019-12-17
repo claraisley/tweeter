@@ -24,6 +24,7 @@
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -57,17 +58,19 @@
         </form>
       </section>
     
-    <article class="tweet-container">
+<section id="tweets-container">
+    <article class="tweets">
       <header>
-        <span>Name</span>
+        <span id="username">Name</span>
         <span id="userhandle">@hello</span>
       </header>
         <p class="tweet-text"> This is the tweet</p> 
-        <footer>
-          <p id="tweet-age">10 days ago</p>
-   </footer>
+      <footer>
+        <p id="tweet-age">10 days ago</p>
+      </footer>
+    </article>      
+</section>
 
-    </article>
       
   </main>
   </body>
