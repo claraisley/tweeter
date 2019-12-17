@@ -12,7 +12,9 @@ $(document).ready(function() {
     $counter.text(tweetLength);
 
     if (tweetLength < 0) {
-      $counter.addClass("red-text")
+      $counter.addClass("error");
+    } else {
+      $counter.removeClass("error")
     }
   })
 

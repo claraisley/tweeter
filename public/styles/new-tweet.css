@@ -1,6 +1,6 @@
 .form-inline {
-  left: 5%;
-  right: 5%;
+  text-align: left;
+  position: relative;
 }
 
 .form-inline textarea {
@@ -15,7 +15,6 @@
 }
 
 .submit-tweet {
-  float: left;
   font-family: 'Bungee', cursive;
   font-weight: 400;
   padding:10px; 
@@ -27,11 +26,13 @@
 }
 
 #counter {
-  float: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   font-family: 'Bungee', cursive;
   font-weight: 400;
 }
 
-.red-text {
+.error {
   color: darkred;
 }

@@ -44,7 +44,7 @@ main {
 }
 
 .tweet-container header {
-
+  width: 100%;
 }
 
 .tweet-container footer {
@@ -53,15 +53,19 @@ main {
 }
 
 .tweet-text {
-
+  font-size: larger;
 }
 
 #tweet-age {
   font-size: medium;
 }
 
+#userhandle {
+  float: right;
+  display: none;
+}
+
 article:hover #userhandle {
-  
   display: block;
 }
 
@@ -69,7 +73,3 @@ article:hover {
   box-shadow: 10px 10px 5px grey;
 }
 
-#userhandle {
-  float: right;
-  display: none;
-}
