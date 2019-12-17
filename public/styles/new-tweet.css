@@ -1,4 +1,3 @@
-
 .form-inline {
   left: 5%;
   right: 5%;
@@ -11,6 +10,7 @@
   display: block;
   border-bottom: 5px solid gray;
   width: 100%;
+  margin-top: 60px;
   margin-bottom: 20px;
 }
 
@@ -26,8 +26,12 @@
 
 }
 
-.counter {
+#counter {
   float: right;
   font-family: 'Bungee', cursive;
   font-weight: 400;
+}
+
+.red-text {
+  color: darkred;
 }

@@ -34,3 +34,11 @@ main {
   top: 62%;
 }
 
+.tweet-container {
+  width: 100%;
+  border: darkslategray solid 2px;
+  padding: 2em;
+  margin-top: 100px;
+  margin-bottom: 2em;
+}
+
