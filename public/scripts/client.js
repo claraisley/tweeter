@@ -57,16 +57,38 @@ const createTweetElement = function(tweet) {
 
 
 // AJAX POST request
+
 const postRequest = function() {
 
 $(".form-inline").submit(() => {
   event.preventDefault();
 
-  const data = $(".form-inline").serialize();
+  const tweetLength = $("#send-tweet-input").val().length;
+
+  if (tweetLength <= 0) {
+    alert("Please enter some data into your tweet to submit!");
+    return;
+  } else if (tweetLength > 140) {
+    alert("You have too many characters!");
+    return;
+  } else {
+    const data = $(".form-inline").serialize();
 
   $.post("/tweets", data, () => {
     console.log("success");
   })
+  }
+
+  // const chars = charCounter();
+
+  // if (!Tweet) {
+  //   alert("Please enter some data into your tweet to submit!");
+  //   return;
+  // } else if (chars < 0) {
+  //   alert("You have too many characters!");
+  //   return;
+  // } else {
+
 })
 }
 
@@ -77,15 +99,14 @@ const loadTweets = function() {
 
   $.getJSON(path)
     .done(data => {
-      renderTweets(data);
-    })
+    renderTweets(data);
+  })
 }
 
 
-//Renders tweets when the document is ready
+//When document is ready, the post request is made and the tweets are loaded to the main page
 
 $(document).ready(function() {
   postRequest();
   loadTweets();
 });
-
