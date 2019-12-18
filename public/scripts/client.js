@@ -25,7 +25,7 @@ const renderTweets = function(tweets) {
 
   for (let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 }
 
@@ -77,19 +77,14 @@ $(".form-inline").submit(() => {
   $.post("/tweets", data, () => {
     console.log("success");
   })
+  .done(function() {
+    loadTweets();
+    $(".form-inline")[0].reset();
+    $("#counter").text(140);
+  })
   }
-
-  // const chars = charCounter();
-
-  // if (!Tweet) {
-  //   alert("Please enter some data into your tweet to submit!");
-  //   return;
-  // } else if (chars < 0) {
-  //   alert("You have too many characters!");
-  //   return;
-  // } else {
-
 })
+
 }
 
 //AJAX GET request
@@ -99,6 +94,7 @@ const loadTweets = function() {
 
   $.getJSON(path)
     .done(data => {
+      $("#tweets-container").empty();
     renderTweets(data);
   })
 }

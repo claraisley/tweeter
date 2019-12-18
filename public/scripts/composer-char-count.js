@@ -8,7 +8,7 @@ const charCounter = function() {
 
 //Uses keydown to count each time a key is pressed, and subract one from the character count on the creat tweet form each time
 
-$("#send-tweet-input").keyup(function() {
+$("#send-tweet-input").on("input",function() {
 
   let tweetLength = $(this).val().length;
   tweetLength = maxLength - tweetLength;
