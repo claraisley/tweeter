@@ -52,6 +52,9 @@ main {
   border-top:  darkslategray solid 3px;
 }
 
+.tweets footer #footer-icons {
+  float: right;
+}
 .tweet-text {
   font-size: larger;
 }

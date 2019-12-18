@@ -5,7 +5,8 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css"/>
+    <script src="https://kit.fontawesome.com/7dc5befe3a.js" crossorigin="anonymous"></script>
 
     <!--Bungee and Source Sans Pro fonts-->
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
@@ -61,12 +62,26 @@
 <section id="tweets-container">
     <article class="tweets">
       <header>
+      <script>
+        const avatars = {
+    
+          Female: ["https://i.imgur.com/nlhLi3I.png","https://i.imgur.com/z5LNkkB.png","https://i.imgur.com/v0JXau2.png","https://i.imgur.com/lRUnDgU.png", "https://i.imgur.com/3GvwNBf.png"],
+          Male: ["https://i.imgur.com/73hZDYK.png","https://i.imgur.com/5fUVPRP.png","https://i.imgur.com/DVpDmdR.png","https://i.imgur.com/2WZtOD6.png", "https://i.imgur.com/ilT4JDe.png"]
+        
+        }      
+      </script>
         <span id="username">Name</span>
         <span id="userhandle">@hello</span>
       </header>
         <p class="tweet-text"> This is the tweet</p> 
       <footer>
-        <p id="tweet-age">10 days ago</p>
+        <p id="tweet-age">10 days ago</p> 
+        <div>
+
+        <i class="fas fa-heart"></i> 
+        <i class="fas fa-retweet"></i>         
+        <i class="fas fa-flag"></i>          
+        </div>
       </footer>
     </article>      
 </section>

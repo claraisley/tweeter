@@ -27,7 +27,6 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }
-  return $tweet;
 }
 
 //Takes tweet JSON object and generates the DOM structure for a tweet, based on that object
@@ -37,12 +36,18 @@ const createTweetElement = function(tweet) {
   const markup = $(`
   <article class="tweets">
     <header>
+      <img id="avatar"> ${tweet.user.avatar}</img>
       <span id="username">${escape(tweet.user.name)}</span>
       <span id="userhandle">${escape(tweet.user.handle)}</span>
     </header>
       <p class="tweet-text"> ${escape(tweet.content.text)}</p> 
     <footer>
-      <p id="tweet-age">${createdAt(tweet.created_at)}</p>
+     <p id="tweet-age">${createdAt(tweet.created_at)}</p>
+      <div id="footer-icons">
+      <i class="fas fa-heart"></i>
+      <i class="fas fa-retweet"></i>      
+      <i class="fas fa-flag"></i> 
+      </div>
     </footer>
   </article>  
 `)
@@ -51,37 +56,36 @@ const createTweetElement = function(tweet) {
 }
 
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1572453825463
-  }
-]
+// AJAX POST request
+const postRequest = function() {
 
+$(".form-inline").submit(() => {
+  event.preventDefault();
+
+  const data = $(".form-inline").serialize();
+
+  $.post("/tweets", data, () => {
+    console.log("success");
+  })
+})
+}
+
+//AJAX GET request
+
+const loadTweets = function() {
+  const path = "/tweets";
+
+  $.getJSON(path)
+    .done(data => {
+      renderTweets(data);
+    })
+}
 
 
 //Renders tweets when the document is ready
 
 $(document).ready(function() {
-  renderTweets(data);
+  postRequest();
+  loadTweets();
 });
 
