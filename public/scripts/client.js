@@ -8,7 +8,7 @@
 //Function that ensures that a user cannot put javascript in their tweet to hack someone else's browser, for security reasons.
 
 function escape(str) {
-  var div = document.createElement('div');
+  const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
@@ -24,7 +24,7 @@ function createdAt(time) {
 const renderTweets = function(tweets) {
 
   for (let tweet of tweets) {
-    let $tweet = createTweetElement(tweet);
+    const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }
   return $tweet;
@@ -34,20 +34,20 @@ const renderTweets = function(tweets) {
 
 const createTweetElement = function(tweet) {
 
-  let markup = $(`
+  const markup = $(`
   <article class="tweets">
-  <header>
-    <span id="username">${escape(tweet.user.name)}</span>
-    <span id="userhandle">${escape(tweet.user.handle)}</span>
-  </header>
-    <p class="tweet-text"> ${escape(tweet.content.text)}</p> 
-  <footer>
-    <p id="tweet-age">${createdAt(tweet.created_at)}</p>
-  </footer>
-</article>  
+    <header>
+      <span id="username">${escape(tweet.user.name)}</span>
+      <span id="userhandle">${escape(tweet.user.handle)}</span>
+    </header>
+      <p class="tweet-text"> ${escape(tweet.content.text)}</p> 
+    <footer>
+      <p id="tweet-age">${createdAt(tweet.created_at)}</p>
+    </footer>
+  </article>  
 `)
-let $markup = $(markup);
-return $markup;
+  const $markup = $(markup);
+  return $markup;
 }
 
 
@@ -73,7 +73,7 @@ const data = [
     "content": {
       "text": "Je pense , donc je suis"
     },
-    "created_at": 1461113959088
+    "created_at": 1572453825463
   }
 ]
 
