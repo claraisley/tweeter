@@ -1,4 +1,6 @@
 nav {
+  justify-content: space-between;
+  display: flex;
   font-family: 'Bungee', cursive;
   font-weight: 400;
   height: 120px;
@@ -12,8 +14,24 @@ nav {
   font-size: larger;
  }
 
- .new-tweet {
+ #new-tweet-nav {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: x-large;
-
+  float: right;
  }
+
+.right-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.compose {
+  float: right;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  background: transparent;
+}

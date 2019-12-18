@@ -36,7 +36,15 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <span class="new-tweet" style="float:right"><b>Write</b> a New Tweet</span>
+
+      <div class="right-nav">
+        <span id="new-tweet-nav" ><b>Write</b> a New Tweet</span>
+
+
+        <button class="compose" type="button"><i class="fas fa-angle-double-down"></i></button>        
+     
+      </div>
+
     </nav>
 
     <header class="page-header">
@@ -51,7 +59,7 @@
 
     <!-- Page-specific (main) content here -->
   <main class="container"> 
-      <section class="new-tweet">
+      <section id="toggle-class"class="new-tweet">
           <form class="form-inline" action="/tweets" method="POST">
             <textarea id="send-tweet-input" name="text" placeholder="What are you humming about?"></textarea>
             <input class="submit-tweet" type="submit" value="Tweet">

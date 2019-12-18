@@ -100,9 +100,14 @@ const loadTweets = function() {
 }
 
 
+
+
 //When document is ready, the post request is made and the tweets are loaded to the main page
 
 $(document).ready(function() {
   postRequest();
   loadTweets();
+  $(".compose").click(function(){
+  $("#toggle-class").toggleClass("new-tweet");
+});
 });
