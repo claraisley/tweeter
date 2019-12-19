@@ -113,5 +113,6 @@ $(document).ready(function() {
   loadTweets();
   $(".compose").click(function() {
     $("#toggle-class").toggleClass("new-tweet");
+    $("#send-tweet-input").focus();
   });
 });
