@@ -60,6 +60,10 @@
     <!-- Page-specific (main) content here -->
   <main class="container"> 
       <section id="toggle-class"class="new-tweet">
+        <div class="alert-no-data">Please enter some data into your tweet to submit!</div>
+        <span class="close-button"></span>
+        <div class="alert-too-many-chars">You have too many characters!</div>
+        <span class="close-button"></span>
           <form class="form-inline" action="/tweets" method="POST">
             <textarea id="send-tweet-input" name="text" placeholder="What are you humming about?"></textarea>
             <input class="submit-tweet" type="submit" value="Tweet">

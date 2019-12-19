@@ -66,10 +66,15 @@ $(".form-inline").submit(() => {
   const tweetLength = $("#send-tweet-input").val().length;
 
   if (tweetLength <= 0) {
-    alert("Please enter some data into your tweet to submit!");
+    $(".alert-no-data").slideDown();
+    $('.alert-no-data').delay(5000).fadeOut('slow');
     return;
   } else if (tweetLength > 140) {
-    alert("You have too many characters!");
+    $(".alert-too-many-chars").slideDown(function() {
+      $('.alert-too-many-chars').delay(5000).fadeOut('slow');
+
+    });
+
     return;
   } else {
     const data = $(".form-inline").serialize();
