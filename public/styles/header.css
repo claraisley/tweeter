@@ -2,10 +2,13 @@
 .page-header {
   height: 400px;
   top: 120px;
-  position: absolute;
   width: 100%;
 
-  background-color: coral;
+  background-color: #C1666B;
   text-align: center;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+.profile-picture {
+  padding-top: 30px;
 }
