@@ -7,17 +7,17 @@
 
 //Function that ensures that a user cannot put javascript in their tweet to hack someone else's browser, for security reasons.
 
-function escape(str) {
+const escape = function(str) {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 //Uses monent to return date in relation to the time now, eg. a few seconds ago, or 2 minutes ago
 
-function createdAt(time) {
+const createdAt = function(time) {
   return moment(time).fromNow();
-}
+};
 
 //Loops through the array of tweet objects and appends each one to the "tweets-container"
 
@@ -27,7 +27,7 @@ const renderTweets = function(tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').prepend($tweet);
   }
-}
+};
 
 //Takes tweet JSON object and generates the DOM structure for a tweet, based on that object
 
@@ -52,47 +52,44 @@ const createTweetElement = function(tweet) {
       </div>
     </footer>
   </article>  
-`)
+`);
   const $markup = $(markup);
   return $markup;
-}
+};
 
 
 // AJAX POST request
 
 const postRequest = function() {
 
-$(".form-inline").submit(() => {
-  event.preventDefault();
+  $(".form-inline").submit(() => {
+    event.preventDefault();
 
-  const tweetLength = $("#send-tweet-input").val().length;
+    const tweetLength = $("#send-tweet-input").val().length;
 
-  if (tweetLength <= 0) {
-    $(".alert-no-data").slideDown();
-    $('.alert-no-data').delay(5000).fadeOut('slow');
-    return;
-  } else if (tweetLength > 140) {
-    $(".alert-too-many-chars").slideDown(function() {
-      $('.alert-too-many-chars').delay(5000).fadeOut('slow');
+    if (tweetLength <= 0) {
+      $(".alert-no-data").slideDown();
+      $('.alert-no-data').delay(5000).fadeOut('slow');
+      return;
+    } else if (tweetLength > 140) {
+      $(".alert-too-many-chars").slideDown(function() {
+        $('.alert-too-many-chars').delay(5000).fadeOut('slow');
+      });
+      return;
+    } else {
+      const data = $(".form-inline").serialize();
 
-    });
-
-    return;
-  } else {
-    const data = $(".form-inline").serialize();
-
-  $.post("/tweets", data, () => {
-    console.log("success");
-  })
-  .done(function() {
-    loadTweets();
-    $(".form-inline")[0].reset();
-    $("#counter").text(140);
-  })
-  }
-})
-
-}
+      $.post("/tweets", data, () => {
+        console.log("success");
+      })
+        .done(function() {
+          loadTweets();
+          $(".form-inline")[0].reset();
+          $("#counter").text(140);
+        });
+    }
+  });
+};
 
 //AJAX GET request
 
@@ -102,9 +99,9 @@ const loadTweets = function() {
   $.getJSON(path)
     .done(data => {
       $("#tweets-container").empty();
-    renderTweets(data);
-  })
-}
+      renderTweets(data);
+    });
+};
 
 
 
@@ -114,7 +111,7 @@ const loadTweets = function() {
 $(document).ready(function() {
   postRequest();
   loadTweets();
-  $(".compose").click(function(){
-  $("#toggle-class").toggleClass("new-tweet");
-});
+  $(".compose").click(function() {
+    $("#toggle-class").toggleClass("new-tweet");
+  });
 });
