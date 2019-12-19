@@ -21,6 +21,9 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 !["Screenshot of hovered tweet"] (https://github.com/claraisley/tweeter/blob/master/docs/hovered-tweet.png?raw=true)
+
 !["Screenshot of main page"] (https://github.com/claraisley/tweeter/blob/master/docs/main-page.png?raw=true)
+
 !["Screenshot of tablet view"] (https://github.com/claraisley/tweeter/blob/master/docs/tablet-view.png?raw=true)
+
 !["Screenshot of tweet creation"] (https://github.com/claraisley/tweeter/blob/master/docs/tweet-creation.png?raw=true)
