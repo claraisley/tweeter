@@ -61,9 +61,7 @@
   <main class="container"> 
       <section id="toggle-class"class="new-tweet">
         <div class="alert-no-data">Please enter some data into your tweet to submit!</div>
-        <span class="close-button"></span>
         <div class="alert-too-many-chars">You have too many characters!</div>
-        <span class="close-button"></span>
           <form class="form-inline" action="/tweets" method="POST">
             <textarea id="send-tweet-input" name="text" placeholder="What are you humming about?"></textarea>
             <input class="submit-tweet" type="submit" value="Tweet">
@@ -74,14 +72,17 @@
 <section id="tweets-container">
     <article class="tweets">
       <header>
-        <span id="username">Name</span>
-        <span id="userhandle">@hello</span>
+        <img id="avatar">
+        <div class="user-details">
+          <span id="username">Name</span>
+          <span id="userhandle">@hello</span>
+        </div>
+
       </header>
         <p class="tweet-text"> This is the tweet</p> 
       <footer>
         <p id="tweet-age">10 days ago</p> 
-        <div>
-
+        <div class="icons">
         <i class="fas fa-heart"></i> 
         <i class="fas fa-retweet"></i>         
         <i class="fas fa-flag"></i>          

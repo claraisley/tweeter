@@ -36,14 +36,16 @@ const createTweetElement = function(tweet) {
   const markup = $(`
   <article class="tweets">
     <header>
-      <img id="avatar"> ${tweet.user.avatar}</img>
+      <img id="avatar" src=${tweet.user.avatars}> 
+      <div class="user-details">
       <span id="username">${escape(tweet.user.name)}</span>
-      <span id="userhandle">${escape(tweet.user.handle)}</span>
+      <span id="userhandle">${escape(tweet.user.handle)}</span>      
+      </div>
     </header>
       <p class="tweet-text"> ${escape(tweet.content.text)}</p> 
     <footer>
      <p id="tweet-age">${createdAt(tweet.created_at)}</p>
-      <div id="footer-icons">
+      <div class="icons">
       <i class="fas fa-heart"></i>
       <i class="fas fa-retweet"></i>      
       <i class="fas fa-flag"></i> 

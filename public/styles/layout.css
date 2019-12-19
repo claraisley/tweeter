@@ -72,18 +72,30 @@ main {
 }
 
 .tweets header {
+  display: flex;
+  align-items: center;
   width: 100%;
 }
 
+.tweets header .user-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 .tweets footer {
   width: 100%;
   border-top:  darkslategray solid 3px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.tweets footer i {
-  width: 100%;
-  float: right;
+.tweets #avatar {
+  margin-right: 10px;
 }
+ footer .icons {
+  margin-top: 16px;
+}
+
 .tweet-text {
   font-size: larger;
 }
